@@ -16,7 +16,7 @@ namespace Test.Controllers
         }
 
         [HttpGet(Name = "TransferCoins")]
-        public List<Order> TransferCoins([FromQuery] int amount, [FromQuery] Models.Type type)
+        public List<Order> TransferCoins([FromQuery] double amount, [FromQuery] Models.Type type)
         {
             return type switch
             {
@@ -25,7 +25,6 @@ namespace Test.Controllers
                 _ => throw new Exception("Type not supported!"),
             };
 
-            //return Ok(result);
         }
     }
 }

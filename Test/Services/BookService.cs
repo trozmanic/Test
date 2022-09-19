@@ -9,14 +9,14 @@
         /// </summary>
         /// <param name="requestedAmount"></param>
         /// <returns></returns>
-        List<Order> PurchaseCoins(int requestedAmount);
+        List<Order> PurchaseCoins(double requestedAmount);
 
         /// <summary>
         ///
         /// </summary>
         /// <param name="requestedAmount"></param>
         /// <returns></returns>
-        List<Order> SellCoins(int requestedAmount);
+        List<Order> SellCoins(double requestedAmount);
     }
     public  class BookService : IBookService
     {
@@ -34,7 +34,7 @@
             this.Books = JsonSerializer.Deserialize<List<Book>>(text);
         }
 
-        public List<Order> PurchaseCoins(int requestedAmount)
+        public List<Order> PurchaseCoins(double requestedAmount)
         {
             var totalAmount = 0.0;
             var orderList = new List<Order>();
@@ -60,7 +60,7 @@
             return orderList;
         }
 
-        public List<Order> SellCoins(int requestedAmount)
+        public List<Order> SellCoins(double requestedAmount)
         {
             var totalAmount = 0.0;
             var sellList = new List<Order>();
